@@ -1,7 +1,15 @@
+import java.util.Scanner;
+
 public class ConversorMonedas {
     public static void main(String[] args) {
+
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Ingresa la cantidad de dinero que deseas convertir: ");
+        double peso = teclado.nextDouble();
+        System.out.println("Elije una opción para convertir: ");
+        int opcionMoneda = teclado.nextInt();
+
         //Variables:
-        double peso = 1;
         double dolar = 4136.83;
         double euro = 4419.52;
         double libra = 5223.23;
@@ -9,31 +17,43 @@ public class ConversorMonedas {
         double won = 2.96;
 
         //Fórmulas:
-        double pesoConversionDolar = peso * dolar;
-
-        double pesoConversionEuro = peso * euro;
-
-        double pesoConversionLibra = peso * libra;
-
-        double pesoConversionYen = peso * yen;
-
-        double pesoConversionWon = peso * won;
+        double pesoConversionDolar = peso / dolar;
+        double pesoConversionEuro = peso / euro;
+        double pesoConversionLibra = peso / libra;
+        double pesoConversionYen = peso / yen;
+        double pesoConversionWon = peso / won;
 
         //Mensajes:
         String mensajePesoDolar = String.format("El valor de %.2f Pesos es equivalente a %.2f Dolares.", peso, pesoConversionDolar);
-        System.out.println(mensajePesoDolar);
-
         String mensajePesoEuro = String.format("El valor de %.2f Pesos es equivalente a %.2f Euros.", peso, pesoConversionEuro);
-        System.out.println(mensajePesoEuro);
-
         String mensajePesoLibra = String.format("El valor de %.2f Pesos es equivalente a %.2f Libras.", peso, pesoConversionLibra);
-        System.out.println(mensajePesoLibra);
-
         String mensajePesoYen = String.format("El valor de %.2f Pesos es equivalente a %.2f Yens.", peso, pesoConversionYen);
-        System.out.println(mensajePesoYen);
-
         String mensajePesoWon = String.format("El valor de %.2f Pesos es equivalente a %.2f Wons.", peso, pesoConversionWon);
-        System.out.println(mensajePesoWon);
+
+
+
+        switch (opcionMoneda) {
+            case 1:
+                System.out.println(mensajePesoDolar);
+                break;
+            case 2:
+                System.out.println(mensajePesoEuro);
+                break;
+            case 3:
+                System.out.println(mensajePesoLibra);
+                break;
+            case 4:
+                System.out.println(mensajePesoYen);
+                break;
+            case 5:
+                System.out.println(mensajePesoWon);
+                break;
+            // otros casos posibles...
+            default:
+                System.out.println("Opción no válida. Seleccione otra opción.");
+        }
+
     }
 }
+
 
