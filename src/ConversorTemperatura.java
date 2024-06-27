@@ -2,12 +2,10 @@ import java.util.Scanner;
 
 public class ConversorTemperatura {
     public static void main(String[] args) {
+
         Scanner teclado = new Scanner(System.in);
         System.out.println("Ingresa el valor de la temperatura que deseas convertir: ");
         double temperaturaCelsius = teclado.nextDouble();
-
-        //Variable de temperatura en Celsius:
-        //double temperaturaCelsius = 22.0;
 
         //Fórmula de conversión de Celsius a Farenheit:
         double temperaturaFarenheit = (temperaturaCelsius * 1.8) + 32;
